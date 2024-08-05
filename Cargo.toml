@@ -1,0 +1,20 @@
+[package]
+name = "sniproxy"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+debug = 1
+opt-level = "s"
+
+[dependencies]
+async-trait = "0.1.80"
+color-eyre = "0.6.3"
+eyre = "0.6.12"
+hickory-resolver = { version = "0.24.1", features = ["tokio"] }
+hickory-server = "0.24.1"
+rand = "0.8.5"
+rustls = "0.23.7"
+tokio = { version = "1", features = ["full"] }
